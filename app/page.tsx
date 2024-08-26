@@ -2,6 +2,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 import { IDashboardCardProps } from "@/interfaces/Dashboard";
 import { Folder, MessageCircle, Newspaper, User } from "lucide-react";
 import PostTable from "@/components/posts/PostTable";
+import AnalyticsChart from "@/components/dashboard/AnalyticsChart";
 
 const dashboardCardData:Array<IDashboardCardProps> = [
   {
@@ -32,6 +33,7 @@ export default function Home() {
     <div className='flex flex-col md:flex-row justify-between gap-5 mb-5'>
       {dashboardCardData.map((dashboardCard:IDashboardCardProps) => (<DashboardCard key={dashboardCard.title} title={dashboardCard.title} count={dashboardCard.count} icon={dashboardCard.icon}/>))}
     </div>
+    <AnalyticsChart/>
     <PostTable title="Latest Posts" limit={5}/>
     </>
   );
